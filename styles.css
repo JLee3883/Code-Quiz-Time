@@ -2,6 +2,13 @@
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
+#questions,
+#final,
+#highscores,
+#result {
+    display: none;  
+}
+
 .button,
 .btn {
     padding: 8px;
@@ -36,6 +43,12 @@
 }
 
 .choices {
+    font-size: 20px;
+    margin-top:auto;
+    margin-left: 43%;
+}
+
+.result {
     font-size: 20px;
     margin-top:auto;
     margin-left: 43%;

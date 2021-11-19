@@ -1,12 +1,14 @@
 let timeEl = document.querySelector("p.time");
 let secondsLeft = 60;
 let scoreEl = document.querySelector("#score");
+const firstEl = document.querySelector("#first");
 
 const questionsEl = document.querySelector("#questions");
 let questionEl = document.querySelector("#question");
 let questionCount = 0;
 
 const highscoresEl = document.querySelector("#highscores");
+const finalEl = document.querySelector("#final");
 const startBtn = document.querySelector("#start");
 const ans1Btn = document.querySelector("#answer1");
 const ans2Btn = document.querySelector("#answer2");
@@ -55,3 +57,23 @@ function setTime() {
         }
     }, 1000);
 }
+
+function startQuiz() {
+    firstEl.style.display = "none";
+    questionsEl.style.display = "block";
+    questionCount = 0;
+
+    setTime();
+    setQuestion(questionCount);
+}
+
+function setQuestion(id) {
+    if (id < questions.length) {
+        questionEl.textContent = questions[id].question;
+        ans1Btn.textContent = questions[id].answers[0];
+        ans2Btn.textContent = questions[id].answers[1];
+        ans3Btn.textContent = questions[id].answers[2];
+        ans4Btn.textContent = questions[id].answers[3];
+    }
+}
+startBtn.addEventListener("click", startQuiz);
