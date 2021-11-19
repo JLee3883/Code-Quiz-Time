@@ -1,11 +1,12 @@
 let timeEl = document.querySelector("p.time");
 let secondsLeft = 60;
-let questionCount = 0;
+let scoreEl = document.querySelector("#score");
 
 const questionsEl = document.querySelector("#questions");
 let questionEl = document.querySelector("#question");
-const highscoresEl = document.querySelector("#highscores");
+let questionCount = 0;
 
+const highscoresEl = document.querySelector("#highscores");
 const startBtn = document.querySelector("#start");
 const ans1Btn = document.querySelector("#answer1");
 const ans2Btn = document.querySelector("#answer2");
