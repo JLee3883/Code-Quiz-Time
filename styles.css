@@ -23,3 +23,20 @@
     margin-top:auto;
     padding: 50px 200px;
 }
+
+.ansBtn,
+.ansBtn:hover,
+.ansBtn:active,
+.ansBtn:focus,
+.ansBtn:active:focus {
+    box-shadow: none;
+    outline: none;
+    color: black; 
+    text-align: center;
+}
+
+.choices {
+    font-size: 20px;
+    margin-top:auto;
+    margin-left: 43%;
+}
