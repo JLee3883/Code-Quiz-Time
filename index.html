@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Code Quiz Time!</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Code Quiz Time!</title>
+    </head>
+    
     <body>
+        <!-- Container for Header -->
         <header>
             <section>
+                <!-- View highscores and timer -->
                 <div>
                     <button id="view-scores" type="button" class="btn">View High Scores</button>
                 </div>
@@ -18,8 +21,9 @@
                 </div>
             </section>
         </header>
-
+        <!-- Main Content -->
         <main>
+            <!-- Section for H1 and Beginning-->
             <section id="first">
                 <div class="hello">
                     <h1>Welcome to the Javascript Code Quiz Challenge!</h1>
@@ -28,6 +32,7 @@
                 </div>
             </section>    
 
+            <!-- Section for question and answers to show upon start-->
             <section id="questions">
                 <h2 style= "text-align: center;"; id="question"></h2>
                     <ul class="choices">
@@ -40,9 +45,11 @@
                         <li><button id="answer4" value="3" type="button"
                             class="btn ansBtn">Answer4</button></li>
                     </ul>
+                        <!-- Results of correct or incorrect answers -->
                         <div class="result" id="result"></div>
             </section>
-
+            
+            <!-- Section for Final Score and Initals input -->
             <section id="final">
                 <div class="goodbye">
                     <h2>Code Quiz Complete!</h2>
@@ -53,6 +60,7 @@
             </div>
             </section>
 
+            <!-- Section for High Scores -->
             <section id="highscores">
                 <div class="goodbye">
                     <h2>High Scores</h2>
@@ -61,12 +69,9 @@
                     <button id="clearscores" class="btn">Clear scores</button>
                 </div>                
             </section>
-
         </main>
 
-        <footer>
-
-        </footer>
         <script src="script.js"></script>
+
     </body>
 </html>

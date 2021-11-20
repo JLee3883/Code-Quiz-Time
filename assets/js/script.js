@@ -1,18 +1,24 @@
+//Variables for page elements
 let timeEl = document.querySelector("p.time");
 let secondsLeft = 60;
 let scoreEl = document.querySelector("#score");
+
 const firstEl = document.querySelector("#first");
 
 const questionsEl = document.querySelector("#questions");
 let questionEl = document.querySelector("#question");
+
 let questionCount = 0;
 
 const resultEl = document.querySelector("#result");
+const finalEl = document.querySelector("#final");
+let nameInput = document.querySelector("#name");
+
 const highscoresEl = document.querySelector("#highscores");
 let scoreListEl = document.querySelector("#score-list");
 let scoreList = [];
-const finalEl = document.querySelector("#final");
-let nameInput = document.querySelector("#name");
+
+// Available buttons for beginning, final submit and scores
 const startBtn = document.querySelector("#start");
 const ans1Btn = document.querySelector("#answer1");
 const ans2Btn = document.querySelector("#answer2");
@@ -24,6 +30,7 @@ const goBackBtn = document.querySelector("#goback");
 const viewScrBtn = document.querySelector("#view-scores");
 const clearScrBtn = document.querySelector("#clearscores");
 
+// Objects for questions and answers array
 const questions = [
     {
     question: "Commonly used data types do not include:",
@@ -52,6 +59,7 @@ const questions = [
     }
 ];
 
+// The timer
 function setTime() {
     let timerInterval = setInterval(function () {
         secondsLeft--;
@@ -66,6 +74,7 @@ function setTime() {
     }, 1000);
 }
 
+// Starts the quiz with the timer and sets up the questions
 function startQuiz() {
     firstEl.style.display = "none";
     questionsEl.style.display = "block";
@@ -75,6 +84,7 @@ function startQuiz() {
     setQuestion(questionCount);
 }
 
+// Function to set question, then takes in a count and displays the next question and multiple choice answers
 function setQuestion(id) {
     if (id < questions.length) {
         questionEl.textContent = questions[id].question;
@@ -85,13 +95,16 @@ function setQuestion(id) {
     }
 }
 
+// Function to check the answer and then move to next question
 function checkAnswer(event) {
     event.preventDefault();
 
+    // shows correct or wrong
     resultEl.style.display = "block";
     let p = document.createElement("p");
     resultEl.appendChild(p);
 
+    // Times out at the end of the 60 second timer
     setTimeout(function () {
         p.style.display = 'none';
 
@@ -107,7 +120,8 @@ function checkAnswer(event) {
     if (questionCount < questions.length) {
         questionCount++;
     }
-   
+
+    // Calls setQuestion to bring in the next question when any of the answer buttons are clicked
     setQuestion(questionCount);
 }
 
@@ -136,7 +150,7 @@ function addScore(event) {
         scoreListEl.append(li);
     }
 
-    
+    // Add to the local storage
     storeScores();
     displayScores();
 }
@@ -158,14 +172,18 @@ function clearScores() {
     scoreListEl.innerHTML="";
 }
 
+// Start timer and display first question when click start quiz
 startBtn.addEventListener("click", startQuiz);
 
+// Check answers loop
 ansBtn.forEach(item => {
     item.addEventListener('click', checkAnswer);
 });
 
+// Adds score with submit button
 submitScrBtn.addEventListener("click", addScore);
 
+// Go Back Button
 goBackBtn.addEventListener("click", function () {
     highscoresEl.style.display = "none";
     firstEl.style.display = "block";
@@ -173,8 +191,10 @@ goBackBtn.addEventListener("click", function () {
     timeEl.textContent = `Time:${secondsLeft}s`;
 });
 
+// Clear the scores
 clearScrBtn.addEventListener("click", clearScores);
 
+// View or hides the High Scores button
 viewScrBtn.addEventListener("click", function () {
     if (highscoresEl.style.display === "none") {
         highscoresEl.style.display = "block";
