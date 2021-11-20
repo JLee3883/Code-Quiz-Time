@@ -11,7 +11,7 @@
         <header>
             <section>
                 <div>
-                    <button type="button" class="btn">View High Scores</button>
+                    <button id="view-scores" type="button" class="btn">View High Scores</button>
                 </div>
                 <div>
                     <p class="time timerClock">Time:60s</p>
@@ -43,10 +43,24 @@
                         <div class="result" id="result"></div>
             </section>
 
+            <section id="final">
+                <div class="goodbye">
+                    <h2>Code Quiz Complete!</h2>
+                    <p>Your final score is: <span id="score">0</span></p>
+                    <p>Enter Name: <span><input id="name" /></span>
+                        <button id="submit-score" class="btn">Submit</button></p>
+                </div>
+            </div>
+            </section>
 
-
-
-
+            <section id="highscores">
+                <div class="goodbye">
+                    <h2>High Scores</h2>
+                    <ol id="score-list"></ol>
+                    <button id="goback" class="btn">Go back</button>
+                    <button id="clearscores" class="btn">Clear scores</button>
+                </div>                
+            </section>
 
         </main>
 

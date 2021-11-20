@@ -1,5 +1,6 @@
 * {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:lavender
 }
 
 #questions,
@@ -14,6 +15,8 @@
     padding: 8px;
     font-size: 15px;
     text-align: center;
+    background-color: lightcyan;
+    
 }
 .timerClock{
     position: absolute; 
@@ -24,7 +27,8 @@
     padding-right: 15px;
 }
 
-.hello {
+.hello,
+.goodbye {
     font-size: 20px;
     text-align: center;
     margin-top:auto;
@@ -40,6 +44,7 @@
     outline: none;
     color: black; 
     text-align: center;
+    background-color:lightblue;
 }
 
 .choices {
